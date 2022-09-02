@@ -1,0 +1,21 @@
+.container{
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.show-navbar{
+    top: 0;
+}
+.hide-navbar{
+    top: -10rem;
+}
+.h2{
+    padding: $spacing 0;
+    text-align: center;
+}
