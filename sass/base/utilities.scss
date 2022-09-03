@@ -3,3 +3,16 @@
     width: 95%;
     margin: 0 auto;
 }
+.main{
+    width: 100%;
+    padding: 0 2rem;
+}
+@include mobile {
+    .main{
+        transform: translateY(-29rem);
+        -webkit-transform: translateY(-29rem);
+        -moz-transform: translateY(-29rem);
+        -ms-transform: translateY(-29rem);
+        -o-transform: translateY(-29rem);
+    }
+}

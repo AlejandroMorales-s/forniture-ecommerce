@@ -4,7 +4,7 @@ import greenFigure from "../../assets/greenFigure.png"
 
 export default function Header() {
     return (
-        <div className='header-container'>
+        <header className='header-container'>
             <div className='header-image-container'>
                 <Image 
                     className='header-image'
@@ -16,6 +16,6 @@ export default function Header() {
                 <h1>Buenos dias, Alejandro</h1>
                 <p>Explora los productos que tenemos para ti</p>
             </div>
-        </div>
+        </header>
     )
 }
