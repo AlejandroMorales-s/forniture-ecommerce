@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 $font: 'Poppins', sans-serif;
-$font-secondary: 'Sriracha', cursive;
 
 //* Fuentes
 $light: 300;
@@ -14,6 +12,7 @@ $greenPrimary: hsla(92, 19%, 50%, 100%);
 $darkGreen: hsla(70, 38%, 12%, 100%);
 $lightGray: hsla(0, 0, 96%, 100%);
 $gray: hsla(0, 0%, 74%, 100%);
+$white: hsla(100, 100%, 100%, 100%);
 
 //* Breakpoints
 $mobile: 359px;
