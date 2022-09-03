@@ -9,10 +9,7 @@
 }
 @include mobile {
     .main{
-        transform: translateY(-29rem);
-        -webkit-transform: translateY(-29rem);
-        -moz-transform: translateY(-29rem);
-        -ms-transform: translateY(-29rem);
-        -o-transform: translateY(-29rem);
+        position: absolute;
+        top: 21rem;
     }
 }

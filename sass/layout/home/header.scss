@@ -1,5 +1,5 @@
 .header-container{
-    height: 60vh;
+    height: fit-content;
     width: 100%;
     overflow-x: hidden;
     position: relative;
@@ -14,7 +14,7 @@
         -moz-transform: translate(-35.5rem, -40.5rem);
         -ms-transform: translate(-35.5rem, -40.5rem);
         -o-transform: translate(-35.5rem, -40.5rem);
-}
+    }
     .header-greeting-container{
         position: absolute;
         top: $spacing;
