@@ -1,12 +1,10 @@
 import React from 'react'
+import Header from '../components/home/Header'
 
-import Header from '../components/home/header'
-
-export default function home({products}) {
+export default function home() {
     return (
         <>
             <Header/>
-
         </>
     )
 }
