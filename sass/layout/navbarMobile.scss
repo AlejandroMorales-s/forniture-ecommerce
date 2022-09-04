@@ -1,0 +1,31 @@
+.navbar-mobile-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    @include box-shadow;
+    .navbar-icon{
+        font-size: 3.25rem;
+        color: $gray;
+    }
+    .profile-navbar-container{
+        padding: 1px;
+        border: 2px solid $greenPrimary;
+        border-radius: 50%;
+        div{
+            position: relative;
+            height: 3.25rem;
+            width: 3.25rem;
+            overflow: hidden;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            
+        }
+    }
+}
