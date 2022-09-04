@@ -6,6 +6,7 @@
     padding: 2rem 6rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     @include box-shadow;
     .navbar-icon{
         font-size: 3.25rem;
