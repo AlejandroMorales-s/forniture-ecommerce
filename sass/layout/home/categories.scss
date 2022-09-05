@@ -1,0 +1,12 @@
+.categories-container{
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+    margin-top: 3.5rem;
+    height: 3rem;
+    overflow-x: scroll;
+    .category{
+        white-space: nowrap;
+        color: $darkGray;
+    }
+}
