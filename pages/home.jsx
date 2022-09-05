@@ -1,7 +1,7 @@
 import React from 'react'
 import {database} from '../libs/firebase'
 import { collection, getDocs } from 'firebase/firestore'
-import Products from './Products'
+import Products from '../components/Products'
 import Header from '../components/home/Header'
 import SearchInput from '../components/home/SearchInput'
 import Categories from '../components/home/Categories'
