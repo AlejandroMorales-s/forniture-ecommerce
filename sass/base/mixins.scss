@@ -21,13 +21,13 @@
     }
 }
 
-@mixin btn {
-    border: 2.5px solid $primary;
-    color: $lightGray;
+@mixin primary-btn {
+    border: 2px solid $greenPrimary;
+    color: $white;
     font-weight: $semiBold;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: calc($spacing / 4) calc($spacing / 2);
-    background-color: $primary;
+    background-color: $greenPrimary;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -37,28 +37,27 @@
     &:hover{
         background-color: transparent;
         cursor: pointer;
-        color: $primary;
+        color: $greenPrimary;
     }
 }
 
 @mixin secondary-btn {
-    border: 2px solid $primary;
-    color: $primary;
+    border: 2px solid $greenPrimary;
+    color: $greenPrimary;
     font-weight: $semiBold;
     padding: calc($spacing/ 4) calc($spacing/ 2);
     background-color: transparent;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-    font-size: 1.8rem;
-    max-width: fit-content;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    font-size: 1.5rem;
     @include transition(all);
     &:hover{
-        background-color: $primary;
+        background-color: $greenPrimary;
         cursor: pointer;
-        color: $lightGray;
+        color: $white;
     }
 }
 

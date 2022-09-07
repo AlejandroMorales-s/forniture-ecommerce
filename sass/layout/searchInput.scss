@@ -8,17 +8,10 @@
         -moz-border-radius: 3.5rem;
         -ms-border-radius: 3.5rem;
         -o-border-radius: 3.5rem;
-        border: none;
         width: 100%;
         @include box-shadow;
-        font-size: 1.5rem;
         @include transition(all);
         border: 2px solid $white;
-        &:focus{
-            outline: 2px solid transparent;
-            outline-offset: 2px;
-            border: 2px solid $greenPrimary
-        }
     }
     .search-input-icon{
         position: absolute;

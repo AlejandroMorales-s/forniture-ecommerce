@@ -17,6 +17,7 @@ body{
 @each $tag, $size in $mobileFontSize {
     #{$tag}{
         font-size: #{$size}rem;
+        margin: 0;
     }
 }
 img{
@@ -29,4 +30,20 @@ a{
 }
 ul{
     list-style: none;
+}
+input{
+    padding: 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border: 2px solid $greenPrimary;
+    font-size: 1.5rem;
+    &:focus{
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        border: 2px solid $greenPrimary
+    }
 }

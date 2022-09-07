@@ -1,0 +1,31 @@
+.social-media-buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    .social-media-buttons-title{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        div{
+            border-top: 2px solid $darkGray;
+            width: 100%;
+        }
+        p{
+            font-weight: $semiBold;
+            width: 12.02rem;
+        }
+    }
+    .social-media-buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        .social-media-icon{
+            font-size: 4.25rem;
+            &:last-of-type{
+                color: #036ee5;
+            }
+        }
+    }
+}
