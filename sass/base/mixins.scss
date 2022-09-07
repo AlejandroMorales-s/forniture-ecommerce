@@ -21,13 +21,13 @@
     }
 }
 
-@mixin primary-btn {
-    border: 2px solid $greenPrimary;
+@mixin primary-btn($primary: $greenPrimary) {
+    border: 2px solid $primary;
     color: $white;
     font-weight: $semiBold;
     font-size: 1.5rem;
     padding: calc($spacing / 4) calc($spacing / 2);
-    background-color: $greenPrimary;
+    background-color: $primary;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -37,8 +37,12 @@
     &:hover{
         background-color: transparent;
         cursor: pointer;
-        color: $greenPrimary;
+        color: $primary;
     }
+}
+
+@mixin danger-btn{
+    @include primary-btn(#da1e28)
 }
 
 @mixin secondary-btn {

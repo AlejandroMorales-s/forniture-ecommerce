@@ -18,6 +18,7 @@
         padding: 1px;
         border: 2px solid $greenPrimary;
         border-radius: 50%;
+        position: relative;
         div{
             position: relative;
             height: 3.25rem;
@@ -29,6 +30,24 @@
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
             
+        }
+    }
+    .navbar-mobile-menu{
+        position: absolute;
+        bottom: 9.5rem;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        right: 2rem;
+        width: fit-content;
+        height: fit-content;
+        padding: 2rem;
+        @include box-shadow;
+        background-color: $white;
+        .logout-button{
+            @include danger-btn;
         }
     }
 }
