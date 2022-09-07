@@ -23,7 +23,7 @@ export default function AuthContext({children}) {
             }
         })
         
-    },[])
+    },[router.route])
 
     return (
         <authContext.Provider
