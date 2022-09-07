@@ -1,13 +1,38 @@
-
+import {
+    signInWithEmailAndPassword
+} from "firebase/auth"
 import Link from "next/link";
+import {useRouter} from "next/router";
+import { useContext } from "react";
 import Input from "../components/forms/Input";
 import CustomForm from "../components/forms/LoginForm";
 import SocialMediaButtons from "../components/forms/SocialMediaButtons";
+import { authContext } from "../context/AuthContext";
+import { auth } from "../libs/firebase";
 
-export default function login() {
+export default function Login() {
+    const {setUser} = useContext(authContext)
+
+    const router = useRouter()
+
     const handleLogin = (data, {setSubmitting}) => {
-        
+        const {email, password} = data
+        signInWithEmailAndPassword(auth, email, password)
+        .then(res => {
+            setSubmitting(false)
+            setUser({
+                name: res.user.displayName,
+                email: res.user.email,
+                logout: false
+            })
+            router.push('/home')
+        })
+        .catch(error => {
+            console.log(error);
+            setSubmitting(false)
+        })
     }
+
     return (
         <div className="form-container">
             <h2>Iniciar sesión</h2>
