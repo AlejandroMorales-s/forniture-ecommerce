@@ -10,9 +10,7 @@ export default function AuthContext({children}) {
     const [user, setUser] = useState({
         logout: true
     })
-
     useEffect(() => {
-        
         onAuthStateChanged(auth, (res) => {
             if(res !== null){
                 setUser({
@@ -20,12 +18,12 @@ export default function AuthContext({children}) {
                     email: res.email,
                     logout: false
                 })
-            } else{
+            } else if (router.route !== '/login' && router.route !== '/signup'){
                 router.push('/')
             }
         })
         
-    },[router])
+    },[])
 
     return (
         <authContext.Provider
