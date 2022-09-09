@@ -2,26 +2,47 @@ import {
     createUserWithEmailAndPassword,
     updateProfile
 } from "firebase/auth"
+import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router"
 import Link from "next/link"
 import Input from "../components/forms/Input"
 import CustomForm from "../components/forms/LoginForm"
 import SocialMediaButtons from "../components/forms/SocialMediaButtons"
-import { auth } from "../libs/firebase"
+import { database, auth } from "../libs/firebase"
+import { useContext } from "react";
+import { authContext } from '../context/AuthContext' 
 
 export default function Signup() {
+    const {setUser} = useContext(authContext)
     const router = useRouter()
 
     const handleSignup = (data, {setSubmitting}) => {
         const {name, email, password} = data
 
         createUserWithEmailAndPassword(auth, email, password)
-        .then(res=>updateProfile(res.user,{
-            displayName:name
-        }))
-        .then(res=>{
+        .then(async (result)=>{
+            console.log(result); 
+            await updateProfile(result.user,{
+                displayName:name
+            })
+            await setDoc(doc(database, "users", result.user.uid),{
+                role:"REGULAR"
+            })
+
+            return {
+                id: result.user.uid
+            }
+        })
+        .then(({id})=>{
+            console.log(id); 
             setSubmitting(false)
-            router.push('/login')
+            setUser({
+                name: name,
+                email: email,
+                id,
+                logout: false
+            })
+            router.push('/home')
         })
         .catch(error=>{
             console.log(error)

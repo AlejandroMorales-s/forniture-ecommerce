@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect} from 'react'
+import {createContext, useState, useEffect, useId} from 'react'
 import {auth} from '../libs/firebase'
 import {onAuthStateChanged} from 'firebase/auth'
 import { useRouter } from 'next/router'
@@ -13,9 +13,11 @@ export default function AuthContext({children}) {
     useEffect(() => {
         onAuthStateChanged(auth, (res) => {
             if(res !== null){
+                const {uid, displayName, email} = res
                 setUser({
-                    name: res.displayName,
-                    email: res.email,
+                    name: displayName,
+                    email: email,
+                    id: uid,
                     logout: false
                 })
             } else if (router.route !== '/login' && router.route !== '/signup'){
