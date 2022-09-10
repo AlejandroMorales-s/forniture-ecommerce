@@ -12,7 +12,7 @@ import { authContext } from '../context/AuthContext'
 
 export default function NavbarMobile() {
     const router = useRouter()
-    const {setUser} = useContext(authContext)
+    const {user, setUser} = useContext(authContext)
     const [menuActive, setMenuActive] = useState(false)
 
     const logout = () => {
@@ -37,7 +37,8 @@ export default function NavbarMobile() {
                 <div>
                     <Image 
                         alt='profile'
-                        src={profileImage}
+                        layout='fill'
+                        src={user.photo !== null ? user.photo : profileImage}
                     />
                 </div>
             </div>

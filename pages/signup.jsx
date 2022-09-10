@@ -34,7 +34,6 @@ export default function Signup() {
             }
         })
         .then(({id})=>{
-            console.log(id); 
             setSubmitting(false)
             setUser({
                 name: name,
