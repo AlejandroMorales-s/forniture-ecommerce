@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter()
   const {user} = useContext(authContext) 
   useEffect(() => {
-    !user.logged && router.push('/home')
+    !user.logout && router.push('/home')
   }, [])
   return (
     <div>
