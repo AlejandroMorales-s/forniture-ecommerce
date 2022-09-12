@@ -8,6 +8,7 @@
 
 //* Layout
 //* ==================================================
+@import './layout/scrollbar.scss';
 @import './layout/home/header.scss';
 @import './layout/home/categories.scss';
 @import './layout/home/products.scss';
@@ -17,3 +18,4 @@
 @import './layout/forms/socialMediaButtons.scss';
 @import './layout/landingPage/landingPage.scss';
 @import './layout/spinner.scss';
+@import './layout/userConfig/userConfig.scss';

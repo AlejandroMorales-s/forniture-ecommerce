@@ -45,8 +45,5 @@
         padding: 2rem;
         @include box-shadow;
         background-color: $white;
-        .logout-button{
-            @include danger-btn;
-        }
     }
 }

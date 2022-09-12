@@ -2,13 +2,25 @@ import React from 'react'
 
 export default function Categories() {
     return (
-        <div className='categories-container'>
-            <p className='category'>Descubre</p>
-            <p className='category'>Sillas</p>
-            <p className='category'>Escritorios</p>
-            <p className='category'>Sillónes</p>
-            <p className='category'>Repisas</p>
-            <p className='category'>Mesas de noche</p>
+        <div className='categories'>
+            <h3>Categorias</h3>
+            <div className='categories-container'>
+                <div className='category'>
+                    <p>Descubre</p>
+                </div>
+                <div className='category'>
+                    <p>Sillas</p>
+                </div>
+                <div className='category'>
+                    <p>Escritorio</p>
+                </div>
+                <div className='category'>
+                    <p>Sillónes</p>
+                </div>
+                <div className='category'>
+                    <p>Repisas</p>
+                </div>
+            </div>
         </div>
     )
 }
