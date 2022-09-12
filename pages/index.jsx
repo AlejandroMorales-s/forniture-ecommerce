@@ -1,8 +1,16 @@
 import Link from "next/link"
 import Image from "next/image";
 import landingPNG from '../assets/landingPNG.png'
+import { useContext, useEffect } from "react";
+import { authContext } from "../context/AuthContext";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter()
+  const {user} = useContext(authContext)
+  useEffect(() => {
+    if(!user.logout) router.push('/home')
+}, [user.logout])
   return (
     <>
       <div className="landing-container">

@@ -9,11 +9,11 @@ import Input from "../components/forms/Input"
 import CustomForm from "../components/forms/LoginForm"
 import SocialMediaButtons from "../components/forms/SocialMediaButtons"
 import { database, auth } from "../libs/firebase"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { authContext } from '../context/AuthContext' 
 
 export default function Signup() {
-    const {setUser} = useContext(authContext)
+    const {user, setUser} = useContext(authContext)
     const router = useRouter()
 
     const handleSignup = (data, {setSubmitting}) => {
@@ -21,7 +21,6 @@ export default function Signup() {
 
         createUserWithEmailAndPassword(auth, email, password)
         .then(async (result)=>{
-            console.log(result); 
             await updateProfile(result.user,{
                 displayName:name
             })
@@ -48,6 +47,11 @@ export default function Signup() {
             setSubmitting(false)
         })
     }
+
+    useEffect(() => {
+        if(!user.logout) router.push('/home')
+    }, [user.logout])
+
     return (
         <div className="form-container">
         <h2>Regístrate</h2>

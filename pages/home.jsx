@@ -1,4 +1,3 @@
-import React from 'react'
 import {database} from '../libs/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import Products from '../components/Products'

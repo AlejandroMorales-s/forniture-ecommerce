@@ -3,7 +3,7 @@ import {
 } from "firebase/auth"
 import Link from "next/link";
 import {useRouter} from "next/router";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Input from "../components/forms/Input";
 import CustomForm from "../components/forms/LoginForm";
 import SocialMediaButtons from "../components/forms/SocialMediaButtons";
@@ -11,7 +11,7 @@ import { authContext } from "../context/AuthContext";
 import { auth } from "../libs/firebase";
 
 export default function Login() {
-    const {setUser} = useContext(authContext)
+    const {user, setUser} = useContext(authContext)
 
     const router = useRouter()
 
@@ -32,6 +32,10 @@ export default function Login() {
             setSubmitting(false)
         })
     }
+
+    useEffect(() => {
+        if(!user.logout) router.push('/home')
+    }, [user.logout])
 
     return (
         <div className="form-container">

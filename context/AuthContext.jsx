@@ -24,7 +24,6 @@ export default function AuthContext({children}) {
             } else if (router.route !== '/login' && router.route !== '/signup'){
                 router.push('/')
             }
-            !user.logout && router.push('/home')
         })
         
     },[router.route])
