@@ -9,9 +9,12 @@
         -ms-border-radius: 3.5rem;
         -o-border-radius: 3.5rem;
         width: 100%;
-        @include box-shadow;
         @include transition(all);
         border: 2px solid $white;
+        &:focus{
+            outline: $greenPrimary;
+            border-color: $greenPrimary;
+        }
     }
     .search-input-icon{
         position: absolute;
