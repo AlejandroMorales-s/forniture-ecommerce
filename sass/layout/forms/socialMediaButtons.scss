@@ -23,7 +23,7 @@
         gap: 3rem;
         .social-media-icon{
             font-size: 4.25rem;
-            &:last-of-type{
+            &:nth-child(2){
                 color: #036ee5;
             }
         }

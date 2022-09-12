@@ -1,6 +1,7 @@
 import {
     GoogleAuthProvider, 
     FacebookAuthProvider, 
+    GithubAuthProvider,
     signInWithPopup,
     fetchSignInMethodsForEmail
 } from 'firebase/auth'
@@ -9,6 +10,7 @@ import { auth } from './firebase'
 const supportedSignInMethods = [
     GoogleAuthProvider.PROVIDER_ID,
     FacebookAuthProvider.PROVIDER_ID,
+    GithubAuthProvider.PROVIDER_ID,
 ]
 
 const getProvider = (id) => {
@@ -17,6 +19,8 @@ const getProvider = (id) => {
             return new GoogleAuthProvider()
         case FacebookAuthProvider.PROVIDER_ID:
             return new FacebookAuthProvider()
+        case GithubAuthProvider.PROVIDER_ID:
+            return new GithubAuthProvider()
         default:
             throw new Error("Not provider accepted: ", id)
     }
@@ -24,7 +28,8 @@ const getProvider = (id) => {
 
 export const signInMethods = {
     google: GoogleAuthProvider.PROVIDER_ID,
-    facebook: FacebookAuthProvider.PROVIDER_ID
+    facebook: FacebookAuthProvider.PROVIDER_ID,
+    github: GithubAuthProvider.PROVIDER_ID,
 }
 
 export const providerLogin = async (id) => {

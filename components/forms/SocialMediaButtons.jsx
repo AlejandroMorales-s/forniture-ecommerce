@@ -1,5 +1,5 @@
 import {FcGoogle} from 'react-icons/fc'
-import {FaFacebook} from 'react-icons/fa'
+import {FaFacebook, FaGithub} from 'react-icons/fa'
 import { providerLogin, signInMethods } from '../../libs/auth'
 import { useRouter } from 'next/router'
 
@@ -25,6 +25,7 @@ export default function SocialMediaButtons() {
             <div className='social-media-buttons'>
                 <FcGoogle onClick={() => loginWithProvider(signInMethods.google)} className='social-media-icon'/>
                 <FaFacebook onClick={() => loginWithProvider(signInMethods.facebook)} className='social-media-icon'/>
+                <FaGithub onClick={() => loginWithProvider(signInMethods.github)} className='social-media-icon'/>
             </div>
         </div>
     )
