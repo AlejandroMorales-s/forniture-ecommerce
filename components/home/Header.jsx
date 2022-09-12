@@ -2,22 +2,28 @@ import React, { useContext } from 'react'
 import Image from 'next/image'
 import greenFigure from "../../assets/greenFigure.png"
 import { authContext } from '../../context/AuthContext'
+import defaulImage from '../../assets/userDefault.png'
 
 export default function Header() {
     const {user} = useContext(authContext)
+    const {name, photo} = user
     return (
         <header className='header-container'>
-            <div className='header-image-container'>
-                <Image 
-                    className='header-image'
-                    src={greenFigure} 
-                    alt='green figure'
-                />
+            <h1 className='logo'>Forniture.</h1>
+            <div className='header-info-container'>
+                <div>
+                    <h2>Buenos dias, {name}</h2>
+                    <p>Explora los mejores muebles</p>
+                </div>
+                <div className='header-image-container'>
+                    <Image
+                        alt={name}
+                        src={photo ? user.photo : defaulImage}
+                        layout='fill'
+                    />
+                </div>
             </div>
-            <div className='header-greeting-container'>
-                <h1>Buenos dias, {user.name}</h1>
-                <p>Explora los productos que tenemos para ti</p>
-            </div>
+
         </header>
     )
 }

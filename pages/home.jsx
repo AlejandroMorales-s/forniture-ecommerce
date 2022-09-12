@@ -31,7 +31,7 @@ export default function home({products}) {
     return (
         <>
             <Header/>
-            <main className='main'>
+            <main>
                 <SearchInput/>
                 <Categories/>
                 <div className='products-home-container'>

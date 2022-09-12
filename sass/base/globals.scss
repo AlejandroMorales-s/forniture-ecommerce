@@ -1,6 +1,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    padding: 2rem;
 }
 *{
     margin: 0;
@@ -17,6 +18,7 @@ body{
 @each $tag, $size in $mobileFontSize {
     #{$tag}{
         font-size: #{$size}rem;
+        color: $darkGreen;
         margin: 0;
     }
 }

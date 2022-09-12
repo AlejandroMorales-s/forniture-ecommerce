@@ -3,16 +3,6 @@
     width: 95%;
     margin: 0 auto;
 }
-.main{
-    width: 100%;
-    padding: 0 2rem;
-}
-@include mobile {
-    .main{
-        position: absolute;
-        top: 21rem;
-    }
-}
 .active-navbar-icon{
     color: $greenPrimary !important;
 }
@@ -21,4 +11,7 @@
 }
 .button-disabled{
     @include secondary-btn;
+}
+.logo{
+    color: $greenPrimary;
 }
