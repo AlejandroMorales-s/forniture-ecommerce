@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Image from 'next/image'
-import greenFigure from "../../assets/greenFigure.png"
 import { authContext } from '../../context/AuthContext'
 import defaulImage from '../../assets/userDefault.png'
 
