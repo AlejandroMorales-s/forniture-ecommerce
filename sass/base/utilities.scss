@@ -19,3 +19,6 @@
 .inactive{
     display: none;
 }
+.button-disabled{
+    @include secondary-btn;
+}

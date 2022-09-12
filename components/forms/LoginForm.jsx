@@ -1,4 +1,5 @@
 import {Formik, Form} from "formik"
+import Spinner from "../Spinner"
 
 export default function CustomForm({children, initialValues,onSubmit, buttonText}) {
     return (
@@ -7,10 +8,14 @@ export default function CustomForm({children, initialValues,onSubmit, buttonText
                 <>
                     <Form className="form">
                         {children}
-                        <button type="submit" className="form-button" disabled={isSubmitting}>{buttonText}</button>
+                        <button 
+                            type="submit" 
+                            className={`${isSubmitting && 'button-disabled'} form-button`} 
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? <Spinner/> : buttonText}
+                        </button>
                     </Form>
-                    {//{status?.success&&<div className="bg-green-300 text-green-900 w-1/2 mx-auto mt-10 p-3 rounded-md">{status?.message}</div>}
-                    }
                 </>
             )}
         </Formik>
