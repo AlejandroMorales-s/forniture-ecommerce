@@ -1,3 +1,5 @@
+import { database, auth } from '../../libs/firebase'
+import { doc, setDoc } from 'firebase/firestore'
 import {FcGoogle} from 'react-icons/fc'
 import {FaFacebook, FaGithub} from 'react-icons/fa'
 import { providerLogin, signInMethods } from '../../libs/auth'
@@ -7,8 +9,11 @@ export default function SocialMediaButtons() {
     const router = useRouter()
     const loginWithProvider = (id) => {
         providerLogin(id)
-        .then(res => {
-            console.log(res);
+        .then(async (res) => {
+            const docRef = doc(database, 'users', res.user.uid)
+            await setDoc(docRef, {
+                role: 'REGULAR'
+            })
             router.push('/home') 
         })
         .catch(error => {
